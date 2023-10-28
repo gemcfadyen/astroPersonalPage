@@ -6,9 +6,6 @@ import Card from "../components/Card.astro";
 import { getCollection } from "astro:content";
 import { format, isBefore } from "date-fns";
 
-import scenery from "../images/scenery.jpeg";
-import { Image } from "astro:assets";
-
 const allBlogPosts = await getCollection("devblog");
 allBlogPosts.sort((a, b) => {
   return isBefore(b.data.date, a.data.date) ? -1 : 1;
@@ -17,9 +14,6 @@ allBlogPosts.sort((a, b) => {
 
 <Layout title="hello world">
   <div class="mb-10">
-    <div class="bg-gradient-to-l hover:bg-gradient-to-r">
-      <Image src={scenery} alt="A nice scene." />
-    </div>
     <Title heading="Blogs I've written" />
 
     <div class="text-black text-center">
