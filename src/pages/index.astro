@@ -1,6 +1,13 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
+
+import { getCollection } from "astro:content";
+import { format, isBefore } from "date-fns";
+
+const allBlogPosts = await getCollection("devblog");
+allBlogPosts.sort((a, b) => {
+  return isBefore(b.data.date, a.data.date) ? -1 : 1;
+});
 ---
 
 <Layout title="hello world">
@@ -11,7 +18,29 @@ import Card from "../components/Card.astro";
       Welcome to Georgina's portfolio
     </h1>
 
-    <div class="bg-slate-100 rounded-lg text-blue-600 text-center mb-10">
+    <div class="mb-10">
+      <div class="bg-slate-100 rounded-lg text-black text-center mb-10 mp-10">
+        Blogs I've written
+      </div>
+
+      <div class="text-black text-center">
+        {
+          allBlogPosts.map((blogPost) => (
+            <li>
+              {format(blogPost.data.date, "MMM do yyyy")}{" "}
+              <a
+                href={`/dev/${blogPost.slug}`}
+                class="ml-2 underline decoration-2 underline-offset-2 mb-10"
+              >
+                {blogPost.data.title}
+              </a>
+            </li>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="bg-slate-100 rounded-lg text-black text-center mb-10 mp-10">
       Things I like
     </div>
 
@@ -52,8 +81,6 @@ import Card from "../components/Card.astro";
       </div>
     </div>
   </main>
-
-  <!-- https://8thlight.com/insights/working-effectively-with-offshore-teams -->
 </Layout>
 
 <style>
