@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Title from "../../components/Title.astro";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -15,9 +16,8 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-  <div
-    class="max-w-6xl mx-auto bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
-  >
+  <Title heading={entry.data.title} />
+  <div class="bg-slate-100 rounded-lg text-black text-center mb-10 mp-10">
     <Content />
   </div>
 </Layout>

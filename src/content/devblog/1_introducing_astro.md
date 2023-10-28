@@ -8,4 +8,4 @@ Today I attened the JavaScript Edinburgh meetup code jam session, my first tech 
 
 It has been a while since I tinkered with any front end technology but it didn't take long to get those brain cells remembering the React and TypeScript nuances.
 
-When creating the content collection, if `astro:content` can be found, run `npx astro sync` on the command line. This will create a `src/env.d.ts` file which references the astro content, thus the error dissappeared.
+When creating the content collection, if `astro:content` can not be found, run `npx astro sync` on the command line. This will create a `src/env.d.ts` file which references the astro content, thus the error should resolve.
