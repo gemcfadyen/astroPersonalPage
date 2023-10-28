@@ -11,94 +11,66 @@ allBlogPosts.sort((a, b) => {
 ---
 
 <Layout title="hello world">
-  <main>
-    <h1
-      class="pt-10 bg-gradient-to-r from-blue-600 via-green-500 to-blue-400 inline-block text-transparent bg-clip-text"
-    >
-      Welcome to Georgina's portfolio
-    </h1>
-
-    <div class="mb-10">
-      <div class="bg-slate-100 rounded-lg text-black text-center mb-10 mp-10">
-        Blogs I've written
-      </div>
-
-      <div class="text-black text-center">
-        {
-          allBlogPosts.map((blogPost) => (
-            <li>
-              {format(blogPost.data.date, "MMM do yyyy")}{" "}
-              <a
-                href={`/dev/${blogPost.slug}`}
-                class="ml-2 underline decoration-2 underline-offset-2 mb-10"
-              >
-                {blogPost.data.title}
-              </a>
-            </li>
-          ))
-        }
-      </div>
-    </div>
-
+  <div class="mb-10">
     <div class="bg-slate-100 rounded-lg text-black text-center mb-10 mp-10">
-      Things I like
+      Blogs I've written
     </div>
 
-    <div class="grid grid-flow-row-dense grid-cols-3 gap-4">
-      <div
-        class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation.
-      </div>
-
-      <div
-        class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit.
-      </div>
-
-      <div
-        class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit.
-      </div>
-
-      <div
-        class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
-      >
-        Lorem ipsum dolor 50 amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit.
-      </div>
+    <div class="text-black text-center">
+      {
+        allBlogPosts.map((blogPost) => (
+          <li>
+            {format(blogPost.data.date, "MMM do yyyy")}{" "}
+            <a
+              href={`/dev/${blogPost.slug}`}
+              class="ml-2 underline decoration-2 underline-offset-2 mb-10"
+            >
+              {blogPost.data.title}
+            </a>
+          </li>
+        ))
+      }
     </div>
-  </main>
+  </div>
+
+  <div class="bg-slate-100 rounded-lg text-black text-center mb-10 mp-10">
+    Things I like
+  </div>
+
+  <div class="grid grid-flow-row-dense grid-cols-3 gap-4">
+    <div
+      class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation.
+    </div>
+
+    <div
+      class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit.
+    </div>
+
+    <div
+      class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
+    >
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit.
+    </div>
+
+    <div
+      class="bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
+    >
+      Lorem ipsum dolor 50 amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit.
+    </div>
+  </div>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-</style>

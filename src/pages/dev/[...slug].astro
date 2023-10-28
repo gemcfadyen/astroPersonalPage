@@ -15,37 +15,9 @@ const { Content } = await entry.render();
 ---
 
 <Layout title={entry.data.title}>
-  <main>
-    <h1
-      class="pt-10 bg-gradient-to-r from-blue-600 via-green-500 to-blue-400 inline-block text-transparent bg-clip-text"
-    >
-      Welcome to Georgina's portfolio
-    </h1>
-
-    <div
-      class="max-w-6xl mx-auto bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
-    >
-      <Content />
-    </div>
-  </main>
+  <div
+    class="max-w-6xl mx-auto bg-slate-50 rounded-lg backdrop-brightness-50 bg-white/30 text-black"
+  >
+    <Content />
+  </div>
 </Layout>
-
-<style>
-  main {
-    margin: auto;
-    padding: 1rem;
-    width: 800px;
-    max-width: calc(100% - 2rem);
-    color: white;
-    font-size: 20px;
-    line-height: 1.6;
-  }
-
-  h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    line-height: 1;
-    text-align: center;
-    margin-bottom: 1em;
-  }
-</style>
